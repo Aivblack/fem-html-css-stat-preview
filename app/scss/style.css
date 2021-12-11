@@ -16,4 +16,101 @@ body {
   font-weight: 400;
   font-size: 0.9375rem;
 }
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #090b1a;
+  color: #FFFFFF;
+}
+
+.card {
+  height: 49.0625rem;
+  width: 20.3125rem;
+  background-color: #1b1938;
+  border-radius: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr auto auto auto;
+      grid-template-rows: 1fr auto auto auto;
+  margin: 2em auto;
+}
+
+.card__image {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  background-image: url("../../images/image-header-mobile.jpg");
+  background-size: cover;
+  background-color: #aa5cdb;
+  background-blend-mode: screen;
+  border-radius: 10px 10px 0 0;
+}
+
+.card__title {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 0 3em;
+}
+
+.card__title span {
+  color: #aa5cdb;
+}
+
+.card__description {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0 2em;
+  font-family: 'Lexend Deca', sans-serif;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.card__stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.card__stats .count__item {
+  line-height: 1px;
+  margin: 3em 0;
+}
+
+.card__stats .count__item h2 {
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-family: 'Lexend Deca', sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.card__stats .count__item .count {
+  font-weight: 700;
+  font-size: 20px;
+}
 /*# sourceMappingURL=style.css.map */
