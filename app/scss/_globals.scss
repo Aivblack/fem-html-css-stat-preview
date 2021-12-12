@@ -52,7 +52,7 @@ main {
     background-image: url('../../images/image-header-mobile.jpg');
     background-size: cover;
     background-color: $softViolet;
-    background-blend-mode: screen;
+    background-blend-mode: multiply;
     border-radius: 10px 10px 0 0;
 
     @media screen and (min-width: 920px) {
