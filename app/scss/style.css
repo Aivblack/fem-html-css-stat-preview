@@ -15,6 +15,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 0.9375rem;
+  background-color: #090b1a;
 }
 
 main {
@@ -27,8 +28,13 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #090b1a;
   color: #FFFFFF;
+}
+
+@media screen and (min-width: 920px) {
+  main {
+    height: 100vh;
+  }
 }
 
 .card {
@@ -40,9 +46,21 @@ main {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  -ms-grid-rows: 1fr auto auto auto;
-      grid-template-rows: 1fr auto auto auto;
-  margin: 2em auto;
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  margin: 5em auto;
+}
+
+@media screen and (min-width: 920px) {
+  .card {
+    height: 27.5rem;
+    width: 69.6875rem;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+    margin: 2em;
+  }
 }
 
 .card__image {
@@ -57,6 +75,19 @@ main {
   background-color: #aa5cdb;
   background-blend-mode: screen;
   border-radius: 10px 10px 0 0;
+}
+
+@media screen and (min-width: 920px) {
+  .card__image {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    grid-row: 1 / 4;
+    border-radius: 0 10px 10px 0;
+    background-image: url("../../images/image-header-desktop.jpg");
+  }
 }
 
 .card__title {
@@ -74,6 +105,16 @@ main {
   color: #aa5cdb;
 }
 
+@media screen and (min-width: 920px) {
+  .card__title {
+    text-align: left;
+    padding: 0 6em;
+  }
+  .card__title h1 {
+    font-size: 30px;
+  }
+}
+
 .card__description {
   text-align: center;
   display: -webkit-box;
@@ -87,14 +128,32 @@ main {
   color: rgba(255, 255, 255, 0.75);
 }
 
+@media screen and (min-width: 920px) {
+  .card__description {
+    text-align: left;
+    padding: 0 6em;
+  }
+}
+
 .card__stats {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   text-align: center;
+}
+
+@media screen and (min-width: 920px) {
+  .card__stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: left;
+    padding: 0 6em;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 .card__stats .count__item {
@@ -103,7 +162,7 @@ main {
 }
 
 .card__stats .count__item h2 {
-  font-size: 15px;
+  font-size: 10px;
   letter-spacing: 2px;
   font-family: 'Lexend Deca', sans-serif;
   color: rgba(255, 255, 255, 0.6);

@@ -14,15 +14,18 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 0.9375rem;
+  background-color: $darkBlue;
 }
 
 main {
-  // height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $darkBlue;
   color: #FFFFFF;
+
+  @media screen and (min-width: 920px) {
+    height: 100vh;
+  }
 }
 
 .card {
@@ -32,8 +35,16 @@ main {
   border-radius: 10px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto auto auto;
-  margin: 2em auto;
+  grid-template-rows: repeat(4, 1fr);
+  margin: 5em auto;
+
+  @media screen and (min-width: 920px) {
+    height: 27.5rem;
+    width: 69.6875rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin: 2em;
+  }
 
   &__image {
     grid-column: 1 / 2;
@@ -43,6 +54,13 @@ main {
     background-color: $softViolet;
     background-blend-mode: screen;
     border-radius: 10px 10px 0 0;
+
+    @media screen and (min-width: 920px) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 4;
+      border-radius: 0 10px 10px 0;
+      background-image: url('../../images/image-header-desktop.jpg');
+    }
   }
 
   &__title {
@@ -54,6 +72,15 @@ main {
     span {
       color: $softViolet;
     }
+
+    @media screen and (min-width: 920px) {
+    text-align: left;
+    padding: 0 6em;
+
+      h1 {
+        font-size: 30px;
+      }
+    }
   }
 
   &__description {
@@ -63,19 +90,30 @@ main {
     padding: 0 2em;
     font-family: 'Lexend Deca', sans-serif;
     color: $slightWhite;
+
+    @media screen and (min-width: 920px) {
+      text-align: left;
+      padding: 0 6em;
+      }
   }
 
   &__stats {
-    display: flex;
-    justify-content: center;
     text-align: center;
+
+    @media screen and (min-width: 920px) {
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      padding: 0 6em;
+      flex-direction: row;
+    }
 
       .count__item {
         line-height: 1px;
         margin: 3em 0;
 
         h2 {
-          font-size: 15px;
+          font-size: 10px;
           letter-spacing: 2px;
           font-family: 'Lexend Deca', sans-serif;
           color: $slightlyWhite;
